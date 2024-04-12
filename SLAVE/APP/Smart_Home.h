@@ -2,28 +2,30 @@
 #ifndef SMART_HOME_H_
 #define SMART_HOME_H_
 
-#define F_CPU  8000000
-#include <util/delay.h>
 /************************************************************************/
-/*                             MASTER                                   */
+/*                              SLAVE                                   */
 /************************************************************************/
-#include "stand Types.h"
+#define LED    PINB0
+#define FAN    PINB1
+#define PUMP   PINB2
+#define TV     PINB3
+#define Buzzer PINB4
+#define Window PIND5
 
-void StartSmartHome(void);
-void SelectUserName(void);
-void MaualMode(void);
-void AutomaticMode(void);
-/*void UserName(void);*/
-u16 GetPassword(void);
-void EditPassword(void);
-void ControlLight(void);
-void ControlFan(void);
-void ControlTV(void);
-void ControlPump(void);
-void OpenDoor(void);
-void CloseDoor(void);
+#define LDR    PINA2
 
-
+/***************************************************************/
+void Start_Slave(void);
+void OpenLight  (void);
+void CloseLight (void);
+void OpenFan    (void);
+void CloseFan   (void);
+void OpenWindow (void);
+void CloseWindow(void);
+void OpenTV     (void);
+void CloseTV    (void);
+void OpenPump   (void);
+void ClosePump  (void);
 
 
 
